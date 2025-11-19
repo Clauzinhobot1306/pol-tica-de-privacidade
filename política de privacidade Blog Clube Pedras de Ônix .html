@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Política de Privacidade — Clube de Desbravadores</title>
+  <style>
+    :root{--bg:#f7fafc;--card:#ffffff;--muted:#586069;--accent:#2563eb}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff);color:#0f172a}
+    .wrap{max-width:900px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+    h1{margin:0;font-size:1.5rem}
+    .card{background:var(--card);border-radius:12px;padding:20px;margin-top:18px;box-shadow:0 6px 20px rgba(12,16,24,0.06)}
+    h2{margin-top:18px}
+    ol{padding-left:1.1rem}
+    p{color:var(--muted)}
+    footer{margin-top:20px;padding-top:12px;border-top:1px solid #eef2ff;color:var(--muted);font-size:0.9rem}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:8px 12px;border-radius:8px;border:0;cursor:pointer;background:var(--accent);color:white}
+    .btn.secondary{background:#e6eefc;color:#123}
+    @media (max-width:560px){.wrap{margin:18px;padding:16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <img src="https://i.postimg.cc/YqYg15TN/IMG-20251119-143221.jpg" class="logo" alt="Logo">
+      <div>
+        <h1>Política de Privacidade</h1>
+        <div style="color:var(--muted);font-size:0.95rem">Blog do Clube de Desbravadores Pedras de Ônix</div>
+      </div>
+    </header><article class="card" id="policyCard">
+  <section>
+    <p>Este blog pertence ao Clube de Desbravadores e tem como objetivo compartilhar informações, atividades e conteúdos educativos. Valorizamos a segurança e a privacidade de todos os usuários que acessam nossas publicações.</p>
+  </section>
+
+  <section>
+    <h2>1. Coleta de Informações</h2>
+    <p>Não coletamos dados pessoais automaticamente. Informações como nome, e-mail ou comentários só são recebidas quando o próprio usuário as fornece voluntariamente ao interagir com o blog.</p>
+
+    <h2>2. Uso das Informações</h2>
+    <p>As informações fornecidas são usadas apenas para:</p>
+    <ul>
+      <li>Responder comentários ou mensagens;</li>
+      <li>Melhorar a comunicação e a experiência dos visitantes;</li>
+      <li>Manter um ambiente seguro e respeitoso.</li>
+    </ul>
+    <p><strong>Não compartilhamos dados com terceiros.</strong></p>
+
+    <h2>3. Cookies</h2>
+    <p>O serviço de hospedagem (Blogger/Google) pode usar cookies para melhorar o funcionamento do site e gerar estatísticas de visita. Esses cookies não identificam o usuário individualmente.</p>
+
+    <h2>4. Segurança</h2>
+    <p>Adotamos práticas básicas de segurança e seguimos as diretrizes da plataforma Blogger para proteger as informações deixadas pelos visitantes.</p>
+
+    <h2>5. Links Externos</h2>
+    <p>Algumas postagens podem conter links para outros sites. Não somos responsáveis pelo conteúdo ou pelas políticas de privacidade de páginas externas.</p>
+
+    <h2>6. Alterações na Política</h2>
+    <p>Podemos atualizar esta Política de Privacidade quando necessário. A versão mais recente estará sempre disponível neste blog.</p>
+  </section>
+
+  <div class="actions">
+    <button class="btn" onclick="window.print()">Imprimir</button>
+    <button class="btn secondary" id="copyBtn">Copiar conteúdo</button>
+  </div>
+
+  <footer>
+    <div>Se tiver dúvidas, entre em contato com a direção do Clube.</div>
+  </footer>
+</article>
+
+<p style="color:var(--muted);font-size:0.86rem;margin-top:12px">Arquivo pronto para publicar como <code>index.html</code> em qualquer hospedagem.</p>
+
+  </main>  <script>
+    document.getElementById('copyBtn').addEventListener('click',async function(){
+      try{
+        const text = document.getElementById('policyCard').innerText;
+        await navigator.clipboard.writeText(text);
+        this.textContent = 'Copiado!';
+        setTimeout(()=> this.textContent = 'Copiar conteúdo',1600);
+      }catch(e){
+        alert('Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.');
+      }
+    });
+  </script></body>
+</html>
